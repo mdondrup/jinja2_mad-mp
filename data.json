@@ -1,0 +1,73 @@
+{
+  "project": {
+    "title": "Genomic Data Analysis of Marine Biodiversity",
+    "pi": "Dr. Jane Smith",
+    "institution": "University of Example",
+    "funding_agency": "National Science Foundation",
+    "start_date": "2026-01-01",
+    "end_date": "2028-12-31"
+  },
+  "datasets": [
+    {
+      "name": "Raw sequencing reads",
+      "description": "Raw FASTQ files from Illumina short-read sequencing of marine organism samples",
+      "formats": ["FASTQ", "BAM"],
+      "estimated_volume": "5 TB",
+      "source": "Illumina NovaSeq 6000"
+    },
+    {
+      "name": "Processed assemblies",
+      "description": "De-novo assembled genomes and annotated gene models",
+      "formats": ["FASTA", "GFF3", "VCF"],
+      "estimated_volume": "500 GB",
+      "source": "Derived from raw sequencing reads"
+    },
+    {
+      "name": "Environmental metadata",
+      "description": "Sampling location, temperature, salinity, and depth measurements",
+      "formats": ["CSV", "JSON"],
+      "estimated_volume": "50 MB",
+      "source": "Field collection"
+    }
+  ],
+  "storage": {
+    "primary": "Institutional HPC cluster (/project/marine_genomics)",
+    "backup_strategy": "Daily incremental backups to off-site tape storage; weekly full backup to cloud (S3)",
+    "backup_frequency": "Daily",
+    "responsible_person": "Dr. Jane Smith"
+  },
+  "access": {
+    "policy": "Open access after publication",
+    "embargo_period": "12 months after project end",
+    "repository": "NCBI SRA (sequencing data), Zenodo (metadata and scripts)",
+    "license": "CC BY 4.0",
+    "restrictions": [
+      "Raw data requires registration to comply with data use agreements",
+      "Sensitive sampling location coordinates withheld for endangered species"
+    ]
+  },
+  "ethics": {
+    "personal_data": false,
+    "anonymisation": null,
+    "ethics_approval": null,
+    "intellectual_property": "All results are owned by the University of Example and will be published open access"
+  },
+  "roles": [
+    {
+      "role": "Principal Investigator",
+      "name": "Dr. Jane Smith",
+      "responsibility": "Overall data management oversight and final decision-making"
+    },
+    {
+      "role": "Data Manager",
+      "name": "John Doe",
+      "responsibility": "Day-to-day data organisation, backup verification, and repository submissions"
+    },
+    {
+      "role": "Bioinformatician",
+      "name": "Alice Johnson",
+      "responsibility": "Pipeline development, data processing, and quality control"
+    }
+  ],
+  "generated_date": "2026-03-17"
+}

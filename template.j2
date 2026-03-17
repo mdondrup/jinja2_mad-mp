@@ -1,0 +1,73 @@
+# Data Management Plan
+
+## Project Information
+
+- **Project Title:** {{ project.title }}
+- **Principal Investigator:** {{ project.pi }}
+- **Institution:** {{ project.institution }}
+- **Funding Agency:** {{ project.funding_agency }}
+- **Project Duration:** {{ project.start_date }} – {{ project.end_date }}
+
+---
+
+## 1. Data Description
+
+{% for dataset in datasets %}
+### Dataset: {{ dataset.name }}
+
+- **Description:** {{ dataset.description }}
+- **Format(s):** {{ dataset.formats | join(', ') }}
+- **Estimated Volume:** {{ dataset.estimated_volume }}
+- **Source:** {{ dataset.source }}
+
+{% endfor %}
+
+---
+
+## 2. Data Storage and Backup
+
+- **Primary Storage:** {{ storage.primary }}
+- **Backup Strategy:** {{ storage.backup_strategy }}
+- **Backup Frequency:** {{ storage.backup_frequency }}
+- **Responsible Person:** {{ storage.responsible_person }}
+
+---
+
+## 3. Data Access and Sharing
+
+- **Access Policy:** {{ access.policy }}
+- **Embargo Period:** {{ access.embargo_period }}
+- **Repository:** {{ access.repository }}
+- **License:** {{ access.license }}
+
+{% if access.restrictions %}
+**Restrictions:**
+{% for restriction in access.restrictions %}
+- {{ restriction }}
+{% endfor %}
+{% endif %}
+
+---
+
+## 4. Ethical and Legal Aspects
+
+- **Personal Data Involved:** {{ "Yes" if ethics.personal_data else "No" }}
+{% if ethics.personal_data %}
+- **Anonymisation:** {{ ethics.anonymisation }}
+- **Ethics Approval:** {{ ethics.ethics_approval }}
+{% endif %}
+- **Intellectual Property:** {{ ethics.intellectual_property }}
+
+---
+
+## 5. Roles and Responsibilities
+
+| Role | Name | Responsibility |
+|------|------|----------------|
+{% for role in roles %}
+| {{ role.role }} | {{ role.name }} | {{ role.responsibility }} |
+{% endfor %}
+
+---
+
+*Generated {{ generated_date }}*
