@@ -23,7 +23,9 @@ pip install -r requirements.txt
 ### Render the template
 
 ```bash
-# Print to stdout
+# use jinja-cli
+jinja2 template.j2 data.json
+# Or use python script; both print to stdout
 python3 render.py
 
 # Use custom template and/or data file
